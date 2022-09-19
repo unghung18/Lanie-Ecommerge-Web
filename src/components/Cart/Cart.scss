@@ -1,0 +1,102 @@
+@use '../../sass/' as *;
+
+.cart-empty {
+    padding: 60px 0;
+}
+
+.cart {
+    padding: 60px 0;
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+
+        tr {
+            &:first-child {
+                th {
+                    text-align: left;
+                    padding: 5px;
+                    color: #fff;
+                    background: #f51167;
+
+                }
+            }
+
+            td {}
+
+        }
+
+        .cart-item {
+            height: 200px;
+            padding: 10px 5px;
+
+
+            .cart-item-product {
+                height: 100%;
+                @include flex(start, center);
+
+                .cart-img {
+                    width: 120px;
+                    height: 120px;
+                    background-position: top, center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    margin-right: 10px;
+                }
+
+                a {
+                    margin: 0 10px;
+                    cursor: pointer;
+                    color: #f51167;
+                    font-size: 12px;
+                }
+            }
+
+            .cart-item-quantity {
+                border: 1px solid #666;
+                display: inline-block;
+
+                button {
+                    border: none;
+                    background-color: #fff;
+                    padding: 10px;
+                }
+
+                input {
+                    border: none;
+                    padding: 10px;
+                    width: 50px;
+                }
+            }
+        }
+
+
+    }
+}
+
+
+
+.total-price {
+    border-top: 3px solid #ff523b;
+
+    table {
+        tr {
+            td {
+                padding: 20px 5px;
+
+                &:last-child {
+                    text-align: right;
+                }
+            }
+
+        }
+    }
+
+    .pay {
+        text-align: center;
+        text-decoration: none;
+        padding: 12px 24px;
+        border: 2px solid #333;
+        color: #000;
+    }
+}

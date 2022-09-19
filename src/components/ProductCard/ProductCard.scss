@@ -1,0 +1,91 @@
+@use '../../sass/' as *;
+
+.latest-product__container-item {
+
+    .pi-pic {
+        display: block;
+        position: relative;
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 400px;
+
+        .tag-sale {
+            position: absolute;
+            right: 16px;
+            top: 14px;
+            font-size: 10px;
+            font-weight: 700;
+            color: #fff;
+            background: #50e550;
+            line-height: 1;
+            text-transform: uppercase;
+            padding: 5px 9px 1px;
+            border-radius: 15px;
+            width: 42px;
+        }
+
+        .pi-links {
+            width: 100%;
+            position: absolute;
+            right: 0;
+            bottom: 15px;
+            z-index: 9;
+            padding-right: 15px;
+            text-align: right;
+            @include flex(end, center);
+
+            a {
+                margin: 0 3px;
+                display: inline-table;
+                width: 36px;
+                height: 36px;
+                background: #fff;
+                border-radius: 60px;
+                font-size: 18px;
+                line-height: 18px;
+                padding-top: 9px;
+                overflow: hidden;
+                color: #000;
+                position: relative;
+                box-shadow: 1px 0 32px rgb(0 0 0 / 20%);
+                transition: all 0.4s ease;
+                text-align: center;
+                cursor: pointer;
+
+                span {
+                    font-size: 12px;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    position: absolute;
+                    right: 19px;
+                    top: 20px;
+                    opacity: 0;
+                }
+
+                &:hover span {
+                    opacity: 1;
+                    top: 12px;
+                    transition: all 0.4s ease 0.3s;
+                }
+
+                &:nth-child(1):hover {
+                    width: 148px;
+                    padding: 8px 18px 0;
+                    text-align: left;
+                }
+            }
+        }
+    }
+
+    .pi-text {
+        padding: 22px 0;
+        @include flex(space-between, center);
+
+        h6 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #111111;
+        }
+    }
+}

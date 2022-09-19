@@ -1,0 +1,7 @@
+@use '../../sass/' as *;
+
+.product__container {
+    display: grid;
+    grid-template-columns: 30% 60%;
+    gap: 10%;
+}

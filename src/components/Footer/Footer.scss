@@ -1,0 +1,178 @@
+@use '../../sass/' as *;
+
+.footer {
+    background: #282828;
+    padding: 60px 0 0;
+
+    .footer__logo {
+        margin-bottom: 60px;
+        text-align: center;
+        font-family: 'DynaPuff', cursive;
+        color: $txt-white;
+    }
+
+    .footer__widgets {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding-bottom: 70px;
+
+        .footer__widget {
+            padding: 0 15px;
+            color: #8f8f8f;
+
+            .widget-title {
+                font-size: 18px;
+                font-weight: 700;
+                color: $txt-white;
+                margin-bottom: 45px;
+            }
+        }
+
+        .about-widget {
+            p {
+                padding-bottom: 50px;
+            }
+
+            img {
+                width: 70%;
+            }
+        }
+
+        .questions-widget {
+            ul {
+                li {
+                    a {
+                        display: inline-block;
+                        position: relative;
+                        padding-left: 20px;
+                        font-size: 14px;
+                        color: #8f8f8f;
+                        margin-bottom: 6px;
+
+                        &:hover {
+                            color: #fff;
+                        }
+
+                        &:hover::after {
+                            width: 7px;
+                            height: 7px;
+                            top: 6px;
+                            background: #ec105a;
+                        }
+
+                        &::after {
+                            position: absolute;
+                            content: "";
+                            width: 5px;
+                            height: 5px;
+                            left: 0;
+                            top: 8px;
+                            border: 1px solid #ec105a;
+                            border-radius: 50%;
+                            -webkit-transition: all 0.2s;
+                            -o-transition: all 0.2s;
+                            transition: all 0.2s;
+                        }
+                    }
+                }
+            }
+        }
+
+        .contact-widget {
+            ul {
+                li {
+                    p {
+                        font-size: 14px;
+                        color: #8f8f8f;
+                        line-height: 1.6;
+
+                        span {
+                            color: #f51167;
+                            margin-right: 15px;
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .post-widget {
+            ul {
+                li {
+                    a {
+                        display: inline-block;
+                        position: relative;
+                        padding-left: 20px;
+                        font-size: 14px;
+                        color: #8f8f8f;
+                        margin-bottom: 6px;
+
+                        &:hover {
+                            color: #fff;
+                        }
+
+                        &:hover::after {
+                            width: 7px;
+                            height: 7px;
+                            top: 6px;
+                            background: #ec105a;
+                        }
+
+                        &::after {
+                            position: absolute;
+                            content: "";
+                            width: 5px;
+                            height: 5px;
+                            left: 0;
+                            top: 8px;
+                            border: 1px solid #ec105a;
+                            border-radius: 50%;
+                            -webkit-transition: all 0.2s;
+                            -o-transition: all 0.2s;
+                            transition: all 0.2s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .footer__socials {
+        border-top: 2px solid #3b3535;
+        padding: 46px 0 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        a {
+            @include flex(center, center);
+            padding: 0 30px;
+
+            .social-link-icon {
+                font-size: 30px;
+                color: #d7d7d7;
+                margin-right: 19px;
+                transition: all 0.3s;
+            }
+
+            span {
+                display: inline-block;
+                font-size: 12px;
+                font-weight: 600;
+                text-transform: uppercase;
+                color: #9f9fa0;
+                transition: all 0.3s;
+            }
+
+            &:hover {
+                .social-link-icon {}
+            }
+        }
+    }
+
+    .footer__copyright {
+        padding: 48px 0 62px;
+        text-align: center;
+        color: $txt-white
+    }
+}
