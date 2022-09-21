@@ -1,0 +1,35 @@
+@use '../../sass/' as *;
+
+.cart-empty {
+    padding: 60px 0;
+}
+
+.cart-page {
+    padding: 60px 0;
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+
+        tr {
+            &:first-child {
+                th {
+                    text-align: left;
+                    padding: 5px;
+                    color: #fff;
+                    background: #f51167;
+
+                }
+            }
+
+            .cart__img-box {
+                width: 60px;
+            }
+
+            .cart__img-box img {
+                width: 100%;
+            }
+
+        }
+    }
+}

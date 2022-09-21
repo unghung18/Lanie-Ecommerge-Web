@@ -6,14 +6,21 @@ import { BiShoppingBag } from 'react-icons/bi';
 import { FiLogIn, FiLogOut } from 'react-icons/fi';
 import { signOut } from 'firebase/auth';
 import { auth } from '../../config/firebase';
+import { useDispatch, useSelector } from 'react-redux';
+import { cartUiActions } from '../../redux/cartUISlice';
 
 const Header = () => {
     const isUser = localStorage.getItem('user');
+    const totalQuantity = useSelector(state => state.cart.totalQuantity);
+    const dispatch = useDispatch();
 
     const logout = async () => {
         const result = await signOut(auth)
         console.log(result)
     }
+    const toggleCart = () => {
+        dispatch(cartUiActions.toggle());
+    };
     return (
         <div className='header'>
             <div className=" container header__top">
@@ -28,11 +35,14 @@ const Header = () => {
 
                 </div>
                 <div className='header__top-right'>
-                    <div className='header__top-right-item'>
-                        <Link to='/cart'>
-                            <BiShoppingBag className='header__top-right-item-icon' />
-                            Shopping Cart
-                        </Link>
+                    <div className='header__top-right-item' onClick={toggleCart}>
+                        <a>
+                            <div className='shopping-cart-item'>
+                                <div className='total-quantity'><span>{totalQuantity}</span></div>
+                                <BiShoppingBag className='header__top-right-item-icon' />
+                            </div>
+                            <span>Shopping Cart</span>
+                        </a>
                     </div>
                     {!isUser ?
                         <div className='header__top-right-item'>
@@ -79,7 +89,7 @@ const Header = () => {
                         </ul>
                     </div>
                     <div className='header__menu-item'>
-                        <Link className='header__menu-item-link' to='/galery'>Bộ sưu tập</Link>
+                        <Link className='header__menu-item-link' to='/cart'>Cart</Link>
                     </div>
                     <div className='header__menu-item'>
                         <Link className='header__menu-item-link' to='/contact'>Contact</Link>

@@ -4,7 +4,7 @@ import { AiOutlineShopping } from 'react-icons/ai';
 import { BsMessenger } from 'react-icons/bs';
 import './ProductCard.scss';
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../../redux/cartSlice';
+import { cartActions } from '../../redux/cartSlice';
 
 const ProductCard = ({ data }) => {
 
@@ -15,7 +15,7 @@ const ProductCard = ({ data }) => {
                 <div className='pi-pic' style={{ backgroundImage: `url(${data.image})` }}>
                     {data.sale && <span className='tag-sale'>Sale</span>}
                     <div className='pi-links' >
-                        <a onClick={() => dispatch(addToCart(data))}>
+                        <a onClick={() => dispatch(cartActions.addItem(data))}>
                             <AiOutlineShopping />
                             <span>ADD TO CARD</span>
                         </a>

@@ -53,6 +53,7 @@
 
             .header__top-right-item {
                 padding: 10px 12px;
+                cursor: pointer;
 
                 &:hover a {
                     color: $main-color;
@@ -67,6 +68,8 @@
                         margin: 0 0.3rem;
                     }
                 }
+
+
             }
         }
     }
@@ -134,5 +137,23 @@
                 visibility: visible;
             }
         }
+    }
+}
+
+.shopping-cart-item {
+    position: relative;
+
+    .total-quantity {
+        position: absolute;
+        top: -10px;
+        right: -5px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        font-size: 0.8rem;
+        font-weight: 500;
+        background-color: $main-color;
+        @include flex(center, center);
+        color: #fff;
     }
 }

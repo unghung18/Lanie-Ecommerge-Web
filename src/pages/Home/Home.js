@@ -82,7 +82,7 @@ const Home = () => {
             <section className='top-seller-products'>
                 <h2>BROWSE TOP SELLING PRODUCTS</h2>
                 <div className='container top-seller-products__container'>
-                    {topSellerProductsData.map((item, index) => (
+                    {topSellerProductsData.slice(1, 9).map((item, index) => (
                         <ProductCard key={index} data={item} />
                     ))}
 

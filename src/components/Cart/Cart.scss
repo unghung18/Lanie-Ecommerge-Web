@@ -1,102 +1,143 @@
 @use '../../sass/' as *;
 
-.cart-empty {
-    padding: 60px 0;
+.cart__container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.639);
+    z-index: 99999;
 }
 
 .cart {
-    padding: 60px 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100%;
+    background: #fff;
+    z-index: 999999;
+    border-radius: 5px;
+}
 
-    table {
-        width: 100%;
-        border-collapse: collapse;
+.cart__close {
+    width: 100%;
+    height: 60px;
 
-        tr {
-            &:first-child {
-                th {
-                    text-align: left;
-                    padding: 5px;
-                    color: #fff;
-                    background: #f51167;
+    padding: 10px 20px;
+}
 
-                }
-            }
+.cart__close span {
+    .cart__close-icon {
+        font-size: 2rem;
+        cursor: pointer;
+    }
+}
 
-            td {}
+.cart__item-list {
+    height: calc(100vh - 140px);
+    overflow-y: scroll;
+}
 
+.cart__bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 5px 20px;
+    width: 100%;
+    height: 80px;
+    background: $main-color;
+    @include flex(space-between, center)
+}
+
+.cart__bottom h6 {
+    font-size: 1rem;
+    color: #fff;
+}
+
+.cart__bottom h6 span {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.cart__bottom button {
+    border: none;
+    padding: 4px 20px;
+    border-radius: 5px;
+    background: #fff;
+    color: #212245;
+}
+
+.cart__bottom button a {
+    color: #212245;
+    font-weight: 600;
+}
+
+@media only screen and (max-width: 576px) {
+    .cart {
+        width: 300px !important;
+    }
+}
+
+.cart__item-info {
+    @include flex(center, center);
+
+    img {
+        width: 35px;
+        height: 35px;
+        object-fit: cover;
+        margin-right: 10px;
+    }
+
+    .cart__product-info {
+        flex: 1;
+        @include flex(space-between, center);
+
+        .cart__product-title {
+            font-size: 1rem;
+            font-weight: 600;
         }
 
-        .cart-item {
-            height: 200px;
-            padding: 10px 5px;
-
-
-            .cart-item-product {
-                height: 100%;
-                @include flex(start, center);
-
-                .cart-img {
-                    width: 120px;
-                    height: 120px;
-                    background-position: top, center;
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    margin-right: 10px;
-                }
-
-                a {
-                    margin: 0 10px;
-                    cursor: pointer;
-                    color: #f51167;
-                    font-size: 12px;
-                }
-            }
-
-            .cart-item-quantity {
-                border: 1px solid #666;
-                display: inline-block;
-
-                button {
-                    border: none;
-                    background-color: #fff;
-                    padding: 10px;
-                }
-
-                input {
-                    border: none;
-                    padding: 10px;
-                    width: 50px;
-                }
-            }
+        .cart__product-price {
+            font-size: 0.8rem;
+            @include flex(center, center);
         }
 
+        .cart__product-price span {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #df2020;
+            margin-left: 2rem;
+        }
 
     }
 }
 
+.increase__decrease-btn {
+    background: #fde4e4;
+    padding: 2px 5px;
+    border-radius: 5px;
+    @include flex(space-between, center);
+}
 
+.increase__btn,
+.decrease__btn {
+    cursor: pointer;
+}
 
-.total-price {
-    border-top: 3px solid #ff523b;
+.delete__btn {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
 
-    table {
-        tr {
-            td {
-                padding: 20px 5px;
+.cart__item {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #fde4e4;
+}
 
-                &:last-child {
-                    text-align: right;
-                }
-            }
-
-        }
-    }
-
-    .pay {
-        text-align: center;
-        text-decoration: none;
-        padding: 12px 24px;
-        border: 2px solid #333;
-        color: #000;
+@media only screen and (max-width: 576px) {
+    .delete__btn {
+        font-size: 1rem;
     }
 }
