@@ -33,18 +33,29 @@ img {
 
 .container {
     width: 100%;
-    max-width: 1175px;
-    margin: auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    @include tablet {
+        max-width: 720px;
+    }
+
+    @include mobile {
+        max-width: 540px;
+    }
 }
 
 section {
-    margin-top: 70px;
-}
+    h2 {
+        margin: 60px 0 60px;
+        font-size: 36px;
+        text-align: center;
 
-section>h2 {
-    margin-bottom: 70px;
-    font-size: 36px;
-    text-align: center;
+        @include small {
+            font-size: 28px;
+        }
+    }
 }
 
 .overlay {
@@ -95,21 +106,4 @@ section>h2 {
     line-height: normal;
     cursor: pointer;
     text-align: center;
-}
-
-.banner {
-    padding: 40px 0;
-}
-
-@include tablet {
-    .container {
-        padding: 0 20px;
-    }
-}
-
-@include mobile {
-    .container {
-        padding: 0 10px;
-    }
-
 }

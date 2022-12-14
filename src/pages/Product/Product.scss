@@ -2,6 +2,40 @@
 
 .product__container {
     display: grid;
-    grid-template-columns: 30% 60%;
+    grid-template-columns: 20% 70%;
     gap: 10%;
+
+    .product-categories {
+        .hashmenu {
+            margin-bottom: 10px;
+
+            li a {
+                color: #8A8A8F;
+            }
+
+            li a:hover {
+                color: #000;
+            }
+        }
+
+
+    }
+}
+
+.product-content {
+    .product-content-heading {
+        @include flex(space-between, start);
+
+        .product-content-heading-fillter {
+            @include flex(center, center);
+
+            li {
+                @include flex(none, center);
+                padding: 30px;
+                font-weight: 800;
+                color: #8A8A8F;
+                cursor: pointer;
+            }
+        }
+    }
 }

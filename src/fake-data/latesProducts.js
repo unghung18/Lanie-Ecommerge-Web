@@ -45,7 +45,6 @@ const latestProducts = [
         price: 50000,
         image: latestProduct5
     },
-
 ]
 
 export default latestProducts;

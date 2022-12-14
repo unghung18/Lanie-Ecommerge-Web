@@ -50,18 +50,31 @@ const Home = () => {
             {/*  */}
 
             {/*============================ latest-products ======================= */}
-            <section className='latest-products'>
+            <section className='latest-products container'>
                 <h2>LATEST PRODUCTS</h2>
                 <Swiper
-                    className='container latest-product__container'
+                    breakpoints={{
+                        1024: {
+                            slidesPerView: 4,
+                        },
+                        760: {
+                            slidesPerView: 3,
+                        },
+                        540: {
+                            slidesPerView: 2,
+                        },
+                        0: {
+                            slidesPerView: 1,
+                        },
+                    }}
+                    className='latest-product__container'
                     style={{
                         "--swiper-navigation-color": "#fff",
                         "--swiper-pagination-color": "#fff",
                     }}
                     loop={true}
-                    spaceBetween={30}
+                    spaceBetween={20}
                     slidesPerView={4}
-                    navigation={true}
                     speed={800}
                     modules={[Navigation, Autoplay]}
                     autoplay={{
@@ -79,9 +92,9 @@ const Home = () => {
             {/*  */}
 
             {/*============================ Top seller products ======================= */}
-            <section className='top-seller-products'>
+            <section className='top-seller-products container'>
                 <h2>BROWSE TOP SELLING PRODUCTS</h2>
-                <div className='container top-seller-products__container'>
+                <div className='top-seller-products__container'>
                     {topSellerProductsData.slice(1, 9).map((item, index) => (
                         <ProductCard key={index} data={item} />
                     ))}
@@ -94,8 +107,8 @@ const Home = () => {
             {/*  */}
 
             {/* ============================= Banner Home============================ */}
-            <div className='container banner'>
-                <img src={bannerHome} alt='banner-home'></img>
+            <div className='banner container'>
+                <img src={bannerHome} alt='banner-home' />
             </div>
             {/*  */}
         </>

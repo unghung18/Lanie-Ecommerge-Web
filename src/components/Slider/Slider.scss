@@ -21,6 +21,11 @@
 
         .slider__container {
             @include flex(space-between, center);
+            padding: 0 50px;
+
+            @include mobile {
+                padding: 0 20px;
+            }
 
             .slider__content {
                 width: 50%;
@@ -45,6 +50,10 @@
                     position: relative;
                     top: 50px;
                     opacity: 0;
+
+                    @include mobile {
+                        font-size: 40px;
+                    }
                 }
 
                 p {
@@ -54,6 +63,10 @@
                     position: relative;
                     top: 100px;
                     opacity: 0;
+                }
+
+                @include tablet {
+                    width: 100%;
                 }
             }
 
@@ -67,6 +80,10 @@
                 transform: rotate(45deg);
                 opacity: 0;
                 @include flex(center, center);
+
+                @include tablet {
+                    display: none;
+                }
 
                 span {
                     font-size: 18px;

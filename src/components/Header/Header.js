@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.scss'
 import { Link } from 'react-router-dom';
-import { HiSearch } from 'react-icons/hi';
+import { BsSearch } from 'react-icons/bs';
 import { BiShoppingBag } from 'react-icons/bi';
 import { FiLogIn, FiLogOut } from 'react-icons/fi';
 import { signOut } from 'firebase/auth';
@@ -23,27 +23,18 @@ const Header = () => {
     };
     return (
         <div className='header'>
-            <div className=" container header__top">
+            <div className="container header__top">
                 <div className='header__logo'>
-                    <Link to='/'>Lanie</Link>
+                    <Link to='/'>Lanie Clothing</Link>
                 </div>
                 <div className='header__search'>
                     <input type='text' placeholder='Search on Lanie'></input>
                     <div className='header__search-icon'>
-                        <HiSearch className='header__search-icon-icon' />
+                        <BsSearch className='header__search-icon-icon' />
                     </div>
 
                 </div>
                 <div className='header__top-right'>
-                    <div className='header__top-right-item' onClick={toggleCart}>
-                        <a>
-                            <div className='shopping-cart-item'>
-                                <div className='total-quantity'><span>{totalQuantity}</span></div>
-                                <BiShoppingBag className='header__top-right-item-icon' />
-                            </div>
-                            <span>Shopping Cart</span>
-                        </a>
-                    </div>
                     {!isUser ?
                         <div className='header__top-right-item'>
                             <Link to='/login'>
@@ -61,6 +52,15 @@ const Header = () => {
                             </div>
                         </>
                     }
+                    <div className='header__top-right-item' onClick={toggleCart}>
+                        <a>
+                            <div className='shopping-cart-item'>
+                                <div className='total-quantity'><span>{totalQuantity}</span></div>
+                                <BiShoppingBag className='header__top-right-item-icon' />
+                            </div>
+                            <span>Shopping Cart</span>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div className='header__menu'>

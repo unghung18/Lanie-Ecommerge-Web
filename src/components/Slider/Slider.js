@@ -16,13 +16,15 @@ const Slider = ({ data }) => {
                 pagination={{
                     clickable: true,
                 }}
-                navigation={true}
                 speed={800}
                 effect="fade"
                 modules={[Navigation, Pagination, Autoplay, EffectFade]}
                 autoplay={{
                     delay: 5000,
                     disableOnInteraction: true,
+                }}
+                style={{
+                    "--swiper-pagination-color": "#fff",
                 }}
             >
                 {data.map((item, index) => (

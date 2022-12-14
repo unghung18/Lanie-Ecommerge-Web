@@ -1,9 +1,11 @@
 import React from 'react';
+import { AiFillCaretDown } from 'react-icons/ai'
 import bannerProduct from '../../assets/image/banner-product.webp';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Product.scss';
 
 const Product = () => {
+    const navigate = useNavigate();
 
     const categoriesData = [
         {
@@ -32,9 +34,9 @@ const Product = () => {
             <div className="product">
                 <div className='container product__container'>
                     <div className="product-categories">
-                        <h4 className="categories-heading">Danh mục tất cả sản phẩm</h4>
+                        <h4 className="categories-heading">Danh mục sản phẩm</h4>
                         {categoriesData.map((item, index) => (
-                            <ul key={index} className="hasmenu">
+                            <ul key={index} className="hashmenu">
                                 <h4>{item.title}</h4>
                                 {item.items.map((item, index) => (
                                     <li key={index}>
@@ -47,18 +49,18 @@ const Product = () => {
                     <div className="product-content">
                         <div className="product-content-heading">
                             <h3>TẤT CẢ SẢN PHẨM</h3>
-                            <ul>
+                            <ul className='product-content-heading-fillter'>
                                 <li>
                                     Kích cỡ
-                                    <i className="fa-solid fa-caret-down"></i>
+                                    <AiFillCaretDown />
                                 </li>
                                 <li>
                                     Màu sắc
-                                    <i className="fa-solid fa-caret-down"></i>
+                                    <AiFillCaretDown />
                                 </li>
                                 <li>
                                     Gias
-                                    <i className="fa-solid fa-caret-down"></i>
+                                    <AiFillCaretDown />
                                 </li>
                             </ul>
                         </div>

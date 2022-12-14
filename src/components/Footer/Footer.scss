@@ -14,10 +14,18 @@
     .footer__widgets {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        padding-bottom: 70px;
+
+        @include tablet {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include small {
+            grid-template-columns: repeat(1, 1fr);
+        }
 
         .footer__widget {
             padding: 0 15px;
+            margin-bottom: 60px;
             color: #8f8f8f;
 
             .widget-title {
@@ -139,10 +147,9 @@
 
     .footer__socials {
         border-top: 2px solid #3b3535;
-        padding: 46px 0 0;
+        padding-top: 46px;
         display: flex;
         justify-content: center;
-        flex-wrap: wrap;
 
         a {
             @include flex(center, center);
@@ -162,7 +169,13 @@
                 text-transform: uppercase;
                 color: #9f9fa0;
                 transition: all 0.3s;
+
+                @include tablet {
+                    display: none;
+                }
             }
+
+
 
             &:hover {
                 .social-link-icon {}

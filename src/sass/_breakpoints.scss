@@ -5,7 +5,13 @@
 }
 
 @mixin mobile {
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 760px) {
+        @content;
+    }
+}
+
+@mixin small {
+    @media only screen and (max-width: 575px) {
         @content;
     }
 }

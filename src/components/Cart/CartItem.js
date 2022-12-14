@@ -3,7 +3,7 @@ import "./Cart.scss";
 
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../redux/cartSlice";
-import { IoIosAdd } from 'react-icons/io';
+import { IoIosAdd, IoIosCloseCircleOutline } from 'react-icons/io';
 import { RiSubtractLine } from 'react-icons/ri';
 
 const CartItem = ({ item }) => {
@@ -39,9 +39,9 @@ const CartItem = ({ item }) => {
                     <div>
                         <h6 className="cart__product-title">{name}</h6>
                         <p className="cart__product-price">
-                            {quantity}<span>${totalPrice}</span>
+                            SL: {quantity}<span>Giá: {totalPrice.toLocaleString()}₫</span>
                         </p>
-                        <div className=" d-flex align-items-center justify-content-between increase__decrease-btn">
+                        <div className="increase__decrease-btn">
                             <span className="increase__btn" onClick={incrementItem}>
                                 <IoIosAdd />
                             </span>
@@ -53,11 +53,11 @@ const CartItem = ({ item }) => {
                     </div>
 
                     <span className="delete__btn" onClick={deleteItem}>
-                        <i class="ri-close-line"></i>
+                        <IoIosCloseCircleOutline className="delete__btn" />
                     </span>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

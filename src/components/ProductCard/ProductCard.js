@@ -12,8 +12,9 @@ const ProductCard = ({ data }) => {
     return (
         <>
             <div className='latest-product__container-item'>
-                <div className='pi-pic' style={{ backgroundImage: `url(${data.image})` }}>
+                <div className='pi-pic'/*  style={{ backgroundImage: `url(${data.image})` }} */>
                     {data.sale && <span className='tag-sale'>Sale</span>}
+                    <img src={data.image} alt='product' />
                     <div className='pi-links' >
                         <a onClick={() => dispatch(cartActions.addItem(data))}>
                             <AiOutlineShopping />
